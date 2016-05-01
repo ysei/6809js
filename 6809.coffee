@@ -1880,28 +1880,26 @@
 
   
   #
-  #        if (flags & fINT) {
-  #            return;
-  #        }
-  #        //flags |= fBKC;
-  #        stPushWord(pc);
-  #        stPush(flags);
-  #        flags |= fINT;
-  #        pc=wordAt(IrqTo);
-  #        T+=7;
-  #        //console.log(pc);
+  #        return  if flags & fINT
+  #        # flags |= fBKC
+  #        stPushWord pc
+  #        stPush flags
+  #        flags |= fINT
+  #        pc = wordAt(IrqTo)
+  #        T += 7
+  #        # console.log pc
   #        
   nmi: ->
 
   
   #
-  #        return;
-  #        stPushWord(pc);
-  #        stPush(flags);
-  #        flags |= fINT;
-  #        pc=wordAt(NMITo);
-  #        T+=7;
-  #        //console.log(pc);
+  #        return
+  #        stPushWord pc
+  #        stPush flags
+  #        flags |= fINT
+  #        pc = wordAt(NMITo)
+  #        T += 7
+  #        # console.log pc
   #        
   set: (reg, value) ->
     switch reg.toUpperCase()
